@@ -1,0 +1,36 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://org.jenkinsci.plugins/WeblogicDeploymentPlugin" elementFormDefault="unqualified" targetNamespace="http://org.jenkinsci.plugins/WeblogicDeploymentPlugin">
+<xs:element name="config">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="weblogic-targets" minOccurs="0" maxOccurs="1" type="type_weblogic-targets"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:complexType name="type_weblogic-targets">
+<xs:sequence>
+<xs:element name="weblogic-target" minOccurs="0" maxOccurs="unbounded" type="type_target"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="type_target">
+<xs:all>
+<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+<xs:element name="172.17.17.115" type="xs:string" minOccurs="1" maxOccurs="1"/>
+<xs:element name="7001" type="xs:int" minOccurs="1" maxOccurs="1"/>
+<xs:element name="weblogic" type="xs:string" minOccurs="1" maxOccurs="1"/>
+<xs:element name="weblogic123" type="xs:string" minOccurs="0" maxOccurs="1"/>
+<xs:element name="userconfigfile" type="xs:string" minOccurs="0" maxOccurs="1"/>
+<xs:element name="userkeyfile" type="xs:string" minOccurs="0" maxOccurs="1"/>
+<xs:element name="authMode" type="authMode" minOccurs="0" maxOccurs="1"/>
+<xs:element name="ftpHost" type="xs:string" minOccurs="0" maxOccurs="1"/>
+<xs:element name="ftpUser" type="xs:string" minOccurs="0" maxOccurs="1"/>
+<xs:element name="ftpPassowrd" type="xs:string" minOccurs="0" maxOccurs="1"/>
+<xs:element name="remoteDir" type="xs:string" minOccurs="0" maxOccurs="1"/>
+</xs:all>
+</xs:complexType>
+<xs:simpleType name="authMode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="BY_LOGIN"/>
+<xs:enumeration value="BY_KEY"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>
